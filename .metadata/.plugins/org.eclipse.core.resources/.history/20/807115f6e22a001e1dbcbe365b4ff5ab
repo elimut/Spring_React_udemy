@@ -1,0 +1,21 @@
+package com.udemy.demo.book;
+
+import java.util.Arrays;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class BookController {
+	@GetMapping(value="/books")
+		// val du endpoint
+	public ResponseEntity listBooks() {
+		Book book = new Book();
+		book.setCategory(new Category("BD"));
+		book.setTitle("MyBook");
+		
+		return ResponseEntity(Arrays.asList(book), HttpStatus.OK );
+		//retour éléments  avec Spring MVC, on y stocke la liste des livres retournés. retour valeurs et statut 200
+	}
+}

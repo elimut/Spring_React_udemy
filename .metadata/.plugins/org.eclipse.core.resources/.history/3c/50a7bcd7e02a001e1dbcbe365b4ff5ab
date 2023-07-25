@@ -1,0 +1,6 @@
+package com.udemy.demo.book;
+
+public class Category {
+	
+	pricate String label;
+}
